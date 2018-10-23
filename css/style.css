@@ -1,0 +1,394 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+body{
+  background: #373a31;
+}
+.container{
+  width: 80%;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.container span{
+  text-transform: uppercase;
+  display: block;
+}
+.text1{
+  color: white;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  background: #373a31;
+  position: relative;
+  animation: text 3s 3;
+}
+.text2{
+  font-size: 30px;
+  color: #6ab04c;
+}
+
+@keyframes text {
+  0%{
+    color: #6ab04c;
+    margin-bottom: -40px;
+  }
+  30%{
+    letter-spacing: 25px;
+    margin-bottom: -40px;
+  }
+  85%{
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+  }
+}
+
+/*radio start*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
+
+$ratingGreyColor: #f9acbf;
+
+
+.normal-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.smile-rating-container {
+  position: relative;
+  height: 80%;
+  min-width: 220px;
+  max-width: 520px;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  top: 20%;
+  margin-top: 300px;
+}
+
+.submit-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rating-label {
+  position: relative;
+  font-size: 1.6em;
+  text-align: center;
+  flex: 0.34;
+  z-index: 3;
+  font-weight: bold;
+  cursor: pointer;
+  color: $ratingGreyColor;
+  transition: 500ms;
+}
+.rating-label:hover, .rating-label:active {
+  color: $ratingGreyColor;
+}
+.rating-label-fun {
+  left: -58px;  
+  text-align: right;
+}
+.rating-label-meh {
+  left: 58px; 
+  text-align: left;
+  color: #222;
+}
+.smile-rating-container input {
+  display: none;
+}
+
+.smile-rating-toggle-container {
+  
+}
+
+.toggle-rating-pill {
+  position: relative;
+  height: 65px;
+  width: 165px;
+  background: $ratingGreyColor;
+  border-radius: 500px;
+  transition: all 500ms;
+}
+
+.smile-rating-toggle {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  background-color: white;
+  left: 182px;
+  border-radius: 500px;
+  transition: all 500ms;
+  z-index: 4;
+}
+.rating-eye {
+  position: absolute;
+  height: 12px;
+  width: 8px;
+  top: 22px;
+  background: $ratingGreyColor;
+  border-radius: 500px;
+  z-index: 5;
+  transition: all 440ms;
+  animation: blink-eye 3s infinite;
+}
+@keyframes blink-eye {
+  0% {
+    height: 12px;
+    width: 8px;
+    top: 22px;
+  }
+  20% {
+    height: 12px;
+    width: 8px;
+    top: 22px;
+  }
+  40% {
+    height: 12px;
+    width: 8px;
+    top: 22px;    
+  }
+  60% {
+    height: 12px;
+    width: 8px;
+    top: 22px;
+  }
+  80% {
+    height: 12px;
+    width: 8px;
+    top: 22px;
+  }
+  90% {
+    height: 12px;
+    width: 8px;
+    top: 22px;    
+  }
+  95% {
+    height: 2px;
+    width: 8px;
+    top: 30px;
+  }
+  100% {
+    height: 12px;
+    width: 8px;
+    top: 22px;
+  }
+}
+.rating-eye-left {
+  left: 192px;
+}
+.rating-eye-right {
+  left: 216px;
+}
+
+.mouth {
+  position: absolute;
+  width: 28px;
+  height: 20px;
+  z-index: 6;
+  border: 4px solid $ratingGreyColor;
+  border-radius: 10%;
+  border-bottom-color: rgba(1,1,1,0);
+  border-right-color: rgba(1,1,1,0);
+  border-left-color: rgba(1,1,1,0);
+  top: 42px;
+  left: 190px;
+  transition: all 500ms;
+}
+
+/*
+Toggle Changes
+*/
+
+#meh:checked~.rating-label-meh {
+  color: white;
+}
+#fun:checked~.rating-label-meh {
+  color: $ratingGreyColor;
+}
+#fun:checked~.mouth {
+  border: 4px solid $ratingBlueColor;
+  border-bottom-color: rgba(1,1,1,0);
+  border-right-color: rgba(1,1,1,0);
+  border-left-color: rgba(1,1,1,0);
+  top: 23px;
+  left: 291px;
+  transform: rotateX(180deg);
+  border-radius: 100%;
+}
+
+#fun:checked~.rating-label-fun {
+  color: white;
+}
+#fun:checked~.smile-rating-toggle {
+  left: 282px;
+}
+
+#fun:checked~.rating-eye-left {
+  left: 292px;
+}
+#fun:checked~.rating-eye-right {
+  left: 316px;
+}
+
+#fun:checked~.toggle-rating-pill {
+  background-color: #6ab04c;
+}
+
+#fun:checked~.rating-eye {
+  background-color: #6ab04c;
+}
+
+
+@media only screen and (max-width:524px) {
+  .normal-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .smile-rating-container {
+    position: relative;
+    height: 10%;
+    width: 490px;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    top: 20%;
+  }
+
+  .submit-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rating-label {
+    position: relative;
+    font-size: 1.6em;
+    text-align: center;
+    flex: 0.34;
+    z-index: 3;
+    font-weight: bold;
+    cursor: pointer;
+    color: $ratingGreyColor;
+    transition: 500ms;
+  }
+  .rating-label:hover, .rating-label:active {
+    color: $ratingGreyColor;
+  }
+  .rating-label-fun {
+    left: -58px;  
+    text-align: right;
+  }
+  .rating-label-meh {
+    left: 50px; 
+    text-align: left;
+    color: #222;
+  }
+  .smile-rating-container input {
+    display: none;
+  }
+
+  .smile-rating-toggle-container {
+
+  }
+
+  .toggle-rating-pill {
+    position: relative;
+    height: 65px;
+    width: 165px;
+    background: $ratingGreyColor;
+    border-radius: 500px;
+    transition: all 500ms;
+  }
+
+  .smile-rating-toggle {
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    background-color: white;
+    left: 168px;
+    border-radius: 500px;
+    transition: all 500ms;
+    z-index: 4;
+  }
+  .rating-eye {
+    position: absolute;
+    height: 12px;
+    width: 8px;
+    background: $ratingGreyColor;
+    border-radius: 500px;
+    top: 22px;
+    z-index: 5;
+    transition: all 440ms;
+  }
+  .rating-eye-left {
+    left: 180px;
+  }
+  .rating-eye-right {
+    left: 201px;
+  }
+
+  .mouth {
+    position: absolute;
+    width: 28px;
+    height: 20px;
+    z-index: 6;
+    border: 4px solid $ratingGreyColor;
+    border-radius: 10%;
+    border-bottom-color: rgba(1,1,1,0);
+    border-right-color: rgba(1,1,1,0);
+    border-left-color: rgba(1,1,1,0);
+    top: 42px;
+    left: 177px;
+    transition: all 500ms;
+  }
+
+  /*
+  Toggle Changes
+  */
+
+  #meh:checked~.rating-label-meh {
+    color: white;
+  }
+  #fun:checked~.rating-label-meh {
+    color: $ratingGreyColor;
+  }
+  #fun:checked~.mouth {
+    border: 4px solid #6ab04c;
+    border-bottom-color: rgba(1,1,1,0);
+    border-right-color: rgba(1,1,1,0);
+    border-left-color: rgba(1,1,1,0);
+    top: 23px;
+    left: 275px;
+    transform: rotateX(180deg);
+    border-radius: 100%;
+  }
+
+  #fun:checked~.rating-label-fun {
+    color: white;
+  }
+  #fun:checked~.smile-rating-toggle {
+    left: 266px;
+  }
+
+  #fun:checked~.rating-eye-left {
+    left: 275px;
+  }
+  #fun:checked~.rating-eye-right {
+    left: 300px;
+  }
+
+  #fun:checked~.toggle-rating-pill {
+    background-color: #6ab04c;
+  }
+
+  #fun:checked~.rating-eye {
+    background-color: #6ab04c;
+  }
+
+}
